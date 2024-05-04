@@ -2,182 +2,61 @@
 <html lang="uk">
 
 <head>
-	<title>Event</title>
+	<title>Archive chats</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css?_v=20240504140308" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css?_v=20240504140308" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20240504140308" type="text/css">
 	<link rel="stylesheet" href="css/style.min.css?_v=20240504140308">
+
 </head>
 
 <body>
-
 	<div class="wrapper">
+		<nav class="main-nav">
+			<div class="container">
+				<div class="head-md">Архів</div>
+				<div class="nav-actions">
+					<a href="#" class="ch_popover">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5C14 3.9 13.1 3 12 3ZM12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19C14 17.9 13.1 17 12 17ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="#323232" />
+						</svg>
+					</a>
+					<div class="popover">
+						<a href="archive.html" class="body-lg">Архів</a>
+						<a href="blocked.html" class="body-lg">Заблоковані</a>
+					</div>
+				</div>
+			</div>
+		</nav>
 		<div class="container">
-			<h1 class="head-md calendar-title">Календар</h1>
-
-			<div class="calendar" id="calendar"></div>
-
-			<div class="calendar-events-headline">
-				<img src="img/calendar.svg" alt="Calendar">
-				<span class="label-lg calendar-date"></span>
-			</div>
-			<div class="calendar-events">
-				<p class="title-md">Не заплановано жодного заходу</p>
-				<div class="calendar-events-item own-event">
-					<img src="img/art.svg" alt="Art event">
-					<div class="calendar-events-content">
-						<div class="body-md calendar-events-date">12:00</div>
-						<div class="title-md calendar-events-name">Малюємо разом осінь</div>
+			<div class="chats-archive">
+				<div class="primary-chat-item">
+					<picture><source srcset="img/chat.webp" type="image/webp"><img src="img/chat.png" alt="Person"></picture>
+					<div class="primary-chat-content">
+						<div class="body-md">Robert Fox</div>
 					</div>
-					<div class="calendar-events-actions">
-						<a href="#" class="c_delete">
-							<img src="img/delete.svg" alt="Delete event">
-						</a>
-						<a href="#" class="c_edit">
-							<img src="img/edit.svg" alt="Edit event">
+					<div class="primary-chat-actions">
+						<a href="#">
+							<img src="img/archive.svg" alt="Archive svg">
 						</a>
 					</div>
 				</div>
-				<div class="calendar-events-item">
-					<img src="img/art.svg" alt="Art event">
-					<div class="calendar-events-content">
-						<div class="body-md calendar-events-date">12:00</div>
-						<div class="title-md calendar-events-name">Малюємо разом осінь</div>
+				<div class="primary-chat-item">
+					<picture><source srcset="img/chat.webp" type="image/webp"><img src="img/chat.png" alt="Person"></picture>
+					<div class="primary-chat-content">
+						<div class="body-md">Robert Fox</div>
 					</div>
-					<div class="calendar-events-actions">
-						<a href="event.html" class="c_goto">
-							<img src="img/right-arrow.svg" alt="Go to the event">
+					<div class="primary-chat-actions">
+						<a href="#">
+							<img src="img/archive.svg" alt="Archive svg">
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="page-actions">
-			<a href="#" class="btn-sm c_search-btn">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M20 20L16.1396 16.1396M16.1396 16.1396C16.7999 15.4793 17.3237 14.6953 17.6811 13.8326C18.0385 12.9698 18.2224 12.0451 18.2224 11.1112C18.2224 10.1774 18.0385 9.25264 17.6811 8.38987C17.3237 7.5271 16.7999 6.74316 16.1396 6.08283C15.4793 5.42249 14.6953 4.89868 13.8326 4.54131C12.9698 4.18394 12.0451 4 11.1112 4C10.1774 4 9.25264 4.18394 8.38987 4.54131C7.5271 4.89868 6.74316 5.42249 6.08283 6.08283C4.74921 7.41644 4 9.2252 4 11.1112C4 12.9972 4.74921 14.806 6.08283 16.1396C7.41644 17.4732 9.2252 18.2224 11.1112 18.2224C12.9972 18.2224 14.806 17.4732 16.1396 16.1396Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
-			</a>
-			<a href="add-event.html" class="btn-sm c_add-btn">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M12 5.25V18.75M18.75 12H5.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
-			</a>
-		</div>
-		<div class="calendar-search">
-			<div class="container">
-				<nav class="secondary-nav">
-					<a href="calendar.html" class="goback">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#323232" />
-						</svg>
-					</a>
-					<div class="title-md">Пошук заходу</div>
-				</nav>
-				<div class="input-row">
-					<label for="name" class="body-sm">Назва заходу</label>
-					<input type="text" placeholder="Назва" id="name" class="body-lg">
-				</div>
-				<div class="input-row">
-					<label for="category" class="body-sm">Категорія</label>
-					<select name="category" id="category">
-						<option value="Всі">Всі</option>
-						<option value="Велотур">Велотур</option>
-						<option value="Велотур">Велотур</option>
-						<option value="Велотур">Велотур</option>
-					</select>
-				</div>
-				<div class="input-row">
-					<label for="address" class="body-sm">Адреса заходу</label>
-					<div class="geocoder body-lg" id="geocoder"></div>
-					<div class="action btn">
-						<a href="#" class="btn-sm show-address-map">
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M20 7.54281C20 6.58191 20 6.101 19.7484 5.73893C19.4969 5.37686 19.0569 5.22485 18.1769 4.92083L17.1413 4.56337C15.9262 4.14326 15.3191 3.93321 14.7067 4.01889C14.0951 4.10364 13.5618 4.47124 12.496 5.20735L11.2676 6.05677C10.4356 6.63166 10.0196 6.9191 9.552 7.03334C9.38085 7.07569 9.20607 7.10038 9.03022 7.10704C8.55022 7.12363 8.07644 6.95964 7.128 6.63166C5.88533 6.20234 5.264 5.98768 4.79111 6.20602C4.62353 6.2833 4.47314 6.39558 4.34933 6.53584C4 6.93292 4 7.61099 4 8.96896V12.714M20 11.0787V15.031C20 16.389 20 17.068 19.6507 17.4632C19.527 17.6042 19.3766 17.7171 19.2089 17.7949C18.736 18.0123 18.1147 17.7977 16.872 17.3683C15.9236 17.0404 15.4498 16.8764 14.9698 16.8939C14.7937 16.8999 14.6186 16.924 14.4471 16.9657C13.9804 17.0809 13.5644 17.3683 12.7324 17.9423L11.504 18.7917C10.4373 19.5288 9.90489 19.8973 9.29333 19.9811C8.68178 20.0668 8.07378 19.8567 6.85867 19.4366L5.82311 19.0792C4.94311 18.7751 4.50311 18.6231 4.25156 18.2611C4.01333 17.9184 4.00089 17.4688 4 16.6064M14.6667 4.16906V7.39356M14.6667 16.6064V11.0787M9.33333 19.8309V16.6064M9.33333 7.39356V12.9213" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-							</svg>
-						</a>
-					</div>
-				</div>
-
-
-				<div class="input-row">
-					<label for="member" class="body-sm">Учасник</label>
-					<input type="text" placeholder="Людина, що долучилась" id="member" class="body-lg">
-				</div>
-
-				<a href="#" class="btn-lg c_search-submit label-lg">Знайти</a>
-			</div>
-		</div>
-		<div class="calendar-search-result">
-			<div class="container">
-				<nav class="secondary-nav">
-					<a href="calendar.html" class="goback">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#323232" />
-						</svg>
-					</a>
-					<div class="title-md">Пошук заходу</div>
-				</nav>
-				<div class="calendar-events">
-					<style>
-						.calendar-events-item {
-							display: flex!important;
-						}
-					</style>
-					<!-- <p class="title-md">Не заплановано жодного заходу</p> -->
-					<div class="calendar-events-item">
-						<img src="img/running-p.svg" alt="Art event">
-						<div class="calendar-events-content">
-							<div class="title-md calendar-events-name">Велотур</div>
-							<div class="body-md calendar-events-date">15.09.2024 17:00</div>
-						</div>
-						<div class="calendar-events-actions">
-							<a href="calendar.html" class="c_calendar">
-								<img src="img/calendar-vr.svg" alt="Go to the calendar">
-							</a>
-							<a href="event.html" class="c_goto">
-								<img src="img/right-arrow.svg" alt="Go to the event">
-							</a>
-						</div>
-					</div>
-					<div class="calendar-events-item">
-						<img src="img/running-p.svg" alt="Art event">
-						<div class="calendar-events-content">
-							<div class="title-md calendar-events-name">Велотур</div>
-							<div class="body-md calendar-events-date">15.09.2024 17:00</div>
-						</div>
-						<div class="calendar-events-actions">
-							<a href="calendar.html" class="c_calendar">
-								<img src="img/calendar-vr.svg" alt="Go to the calendar">
-							</a>
-							<a href="event.html" class="c_goto">
-								<img src="img/right-arrow.svg" alt="Go to the event">
-							</a>
-						</div>
-					</div>
-				</div>
-				<a href="#" class="c_search-refresh btn-sm">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<g clip-path="url(#clip0_726_2636)">
-							<path d="M6.60534 22.2064L6.59866 22.2028L6.59187 22.1994C4.97303 21.3858 3.68274 20.0985 2.60828 18.6595L1.99941 17.8027L1.09184 16.5256V18.0923V21.2846H0.5V16.2538H5.5V16.8538H2.93878H1.94184L2.53804 17.6529L2.89409 18.13C3.80073 19.5554 5.0869 20.712 6.73414 21.6049C8.2964 22.5188 10.1007 22.9 12 22.9C13.5182 22.9 14.9404 22.6467 16.2467 21.9945C17.5458 21.4679 18.694 20.5632 19.6771 19.6985L19.6896 19.6875L19.7014 19.6757C20.724 18.6479 21.4961 17.4867 22.0121 16.1936C22.4693 15.156 22.7183 13.9367 22.8559 12.8077H23.4853C23.4136 14.0372 23.0824 15.2648 22.5648 16.4094L22.5616 16.4166L22.5585 16.4239C21.9735 17.8352 21.1549 19.0123 20.0945 20.0781C19.0341 21.144 17.8633 21.9665 16.4599 22.5542L16.4512 22.5578L16.4426 22.5618C14.932 23.2626 13.4157 23.5 11.8776 23.5C9.99749 23.5 8.12066 23.0266 6.60534 22.2064ZM22.6633 5.90769V2.71538H23.2551V7.86923H18.2551V7.26923H20.8163H21.8133L21.2171 6.47021L20.861 5.99305C19.9544 4.56769 18.6682 3.41107 17.021 2.51816C15.4587 1.60431 13.6544 1.22308 11.7551 1.22308C10.2336 1.22308 8.80859 1.47747 7.49999 2.13273C6.34789 2.64893 5.2079 3.4154 4.20041 4.30147L4.17538 4.32348L4.15349 4.34863C3.267 5.36696 2.50903 6.5105 1.87886 7.77731L1.87382 7.78744L1.86924 7.7978C1.40963 8.83722 1.15965 10.0601 1.02163 11.1923H0.514675C0.586384 9.96279 0.917589 8.73516 1.43517 7.59064C2.02426 6.288 2.8476 4.98606 3.78366 3.92252C4.83614 2.98666 6.12891 2.15689 7.44176 1.43572C8.85445 0.846759 10.2513 0.5 11.8776 0.5C13.7576 0.5 15.6344 0.973448 17.1498 1.79357L17.1564 1.79719L17.1632 1.8006C18.7821 2.61417 20.0724 3.90152 21.1468 5.34054L21.7557 6.19733L22.6633 7.47444V5.90769Z" stroke="white" />
-							<path d="M17.4951 18.0833C17.3508 18.0833 17.2065 18.0833 17.0622 17.939L14.8975 15.7743C13.8873 16.4958 12.7328 16.9288 11.434 16.9288C9.99092 16.9288 8.5478 16.3515 7.53762 15.3413C6.52744 14.3312 5.9502 12.888 5.9502 11.4449C5.9502 10.0018 6.52744 8.55869 7.53762 7.54851C7.97056 6.97127 8.54781 6.53833 9.26936 6.24971C10.5682 5.67246 12.1556 5.67246 13.4544 6.24971C14.176 6.53833 14.7532 6.97127 15.1861 7.4042C15.6191 7.83714 16.052 8.55869 16.3406 9.13594C16.6293 9.8575 16.7736 10.5791 16.7736 11.3006C16.7736 12.0222 16.6293 12.7437 16.3406 13.4653C16.1963 13.8982 15.9077 14.3312 15.6191 14.7641L17.7838 16.9288C18.0724 17.2174 18.0724 17.6503 17.7838 17.939C17.7838 18.0833 17.6394 18.0833 17.4951 18.0833ZM11.434 7.25989C10.8568 7.25989 10.2795 7.4042 9.84661 7.54851C9.26936 7.69282 8.83643 8.12576 8.54781 8.41438C7.82625 9.13594 7.39331 10.2904 7.39331 11.3006C7.39331 12.4551 7.82625 13.4653 8.54781 14.1869C10.1352 15.7743 12.8772 15.7743 14.4646 14.1869C14.8975 13.7539 15.1861 13.321 15.3305 12.888C15.4748 12.3108 15.6191 11.8779 15.6191 11.3006C15.6191 10.7234 15.4748 10.1461 15.3305 9.71319C15.1861 9.13594 14.7532 8.70301 14.4646 8.41438C14.0316 7.98145 13.5987 7.69282 13.1658 7.54851C12.4442 7.4042 12.0113 7.25989 11.434 7.25989Z" fill="white" />
-						</g>
-						<defs>
-							<clipPath id="clip0_726_2636">
-								<rect width="24" height="24" fill="white" />
-							</clipPath>
-						</defs>
-					</svg>
-				</a>
-			</div>
-		</div>
-		<div class="address-map" id="address-map"></div>
 		<footer class="bottom-menu">
 			<div class="container">
 				<a href="index.html">
@@ -186,21 +65,21 @@
 					</svg>
 					<span>Заходи</span>
 				</a>
-				<a href="#">
+				<a href="chats.html" class="active">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M3 10.7442C3 10.9107 3.06615 11.0704 3.18391 11.1882C3.30167 11.306 3.46138 11.3721 3.62791 11.3721C3.79444 11.3721 3.95415 11.306 4.07191 11.1882C4.18966 11.0704 4.25582 10.9107 4.25582 10.7442H3ZM4.52707 15.0357C4.46335 14.8819 4.3411 14.7596 4.18724 14.6959C4.03337 14.6321 3.86048 14.6321 3.70661 14.6958C3.55273 14.7596 3.43047 14.8818 3.36673 15.0357C3.30298 15.1895 3.30297 15.3624 3.3667 15.5163L4.52707 15.0357ZM13.4501 20.1796L13.9038 19.4127L12.8238 18.7731L12.3692 19.5399L13.4501 20.1796ZM10.0962 19.4127L10.55 20.1796L11.63 19.5399L11.177 18.7731L10.0962 19.4127ZM12.3692 19.5399C12.3301 19.6026 12.2757 19.6542 12.2111 19.69C12.1465 19.7258 12.0739 19.7446 12 19.7446C11.9262 19.7446 11.8535 19.7258 11.7889 19.69C11.7244 19.6542 11.6699 19.6026 11.6308 19.5399L10.55 20.1796C11.1971 21.2738 12.8021 21.2738 13.4501 20.1796L12.3701 19.5399H12.3692ZM10.7442 4.25582H13.2558V3H10.7442V4.25582ZM19.7442 10.7442V11.5814H21V10.7442H19.7442ZM8.48624 17.2259C7.43471 17.2075 6.88382 17.1405 6.45182 16.9613L5.9721 18.1217C6.64605 18.4013 7.41294 18.4641 8.46448 18.4825L8.48624 17.2259ZM3.3667 15.5163C3.60862 16.1004 3.96323 16.6311 4.41026 17.0781C4.8573 17.5252 5.38801 17.8798 5.9721 18.1217L6.45182 16.9613C5.58002 16.6002 4.8882 15.9076 4.52707 15.0357L3.3667 15.5163ZM19.7442 11.5814C19.7442 12.5651 19.7442 13.2717 19.7057 13.8293C19.668 14.381 19.596 14.741 19.4738 15.0357L20.6333 15.5163C20.8301 15.0424 20.9163 14.5301 20.959 13.9147C21.0009 13.3044 21 12.5484 21 11.5814H19.7442ZM15.5356 18.4809C16.5871 18.4633 17.354 18.4013 18.0279 18.1217L17.5474 16.9613C17.1162 17.1405 16.5653 17.2075 15.5146 17.2259L15.5356 18.4817V18.4809ZM19.4738 15.0357C19.1127 15.9076 18.42 16.6002 17.5482 16.9613L18.0279 18.1217C18.612 17.8798 19.1427 17.5252 19.5898 17.0781C20.0368 16.6311 20.3914 16.1004 20.6333 15.5163L19.4738 15.0357ZM13.2558 4.25582C14.6381 4.25582 15.631 4.25582 16.4054 4.33033C17.1706 4.40317 17.6571 4.54214 18.0455 4.77991L18.7011 3.70912C18.0824 3.3307 17.3808 3.16158 16.5243 3.07954C15.6771 2.99916 14.6138 3 13.2558 3V4.25582ZM21 10.7442C21 9.38625 21 8.32383 20.9197 7.47573C20.8385 6.61926 20.6693 5.91684 20.2909 5.29898L19.2193 5.95452C19.4579 6.34298 19.5969 6.8294 19.6697 7.59545C19.7434 8.36904 19.7442 9.36197 19.7442 10.7442H21ZM18.0447 4.77991C18.5237 5.07318 18.9265 5.4757 19.2201 5.95452L20.2909 5.29898C19.8939 4.65096 19.3491 4.10615 18.7011 3.70912L18.0455 4.78075L18.0447 4.77991ZM10.7442 3C9.38625 3 8.32383 3 7.47573 3.07954C6.61926 3.16158 5.91684 3.3307 5.29898 3.70912L5.95452 4.78075C6.34298 4.54214 6.8294 4.40317 7.59545 4.33033C8.36904 4.25665 9.36197 4.25582 10.7442 4.25582V3ZM4.25582 10.7442C4.25582 9.36197 4.25582 8.36904 4.33033 7.59462C4.40317 6.8294 4.54214 6.34298 4.77991 5.95452L3.70912 5.29982C3.3307 5.91768 3.16158 6.61926 3.07954 7.47573C3 8.32466 3 9.38625 3 10.7442H4.25582ZM5.29898 3.70912C4.65096 4.10615 4.10615 4.6518 3.70912 5.29982L4.78075 5.95452C5.07389 5.47589 5.4761 5.07339 5.95452 4.77991L5.29898 3.70912ZM11.1762 18.7731C11.0071 18.4859 10.8581 18.2322 10.7124 18.033C10.5626 17.8145 10.3679 17.6304 10.1414 17.493L9.51015 18.5788C9.5495 18.6023 9.60392 18.6441 9.69769 18.7731C9.79899 18.912 9.91369 19.1046 10.0962 19.4127L11.1762 18.7731ZM8.46448 18.4809C8.83285 18.4876 9.06476 18.4926 9.24225 18.5118C9.40801 18.5303 9.47248 18.5571 9.51015 18.5788L10.1414 17.493C9.907 17.3631 9.64752 17.2849 9.38039 17.2636C9.1309 17.2359 8.83118 17.2318 8.48624 17.2259L8.46448 18.4825V18.4809ZM13.9038 19.4127C14.0864 19.1054 14.201 18.912 14.3024 18.7731C14.3961 18.6441 14.4505 18.6023 14.4899 18.5788L13.8586 17.493C13.6158 17.6353 13.44 17.8237 13.2877 18.033C13.1428 18.2322 12.993 18.4851 12.823 18.7731L13.9038 19.4127ZM15.5146 17.2259C15.1697 17.2318 14.8691 17.2359 14.6197 17.2636C14.3593 17.2929 14.1039 17.3506 13.8586 17.493L14.4899 18.5788C14.5276 18.5571 14.592 18.5303 14.7578 18.5118C14.9353 18.4926 15.168 18.4867 15.5364 18.4809L15.5146 17.2251V17.2259Z" fill="#323232" />
 						<path d="M8.65115 11.1628H8.65869M11.9925 11.1628H12M15.3413 11.1628H15.3488" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 					<span>Чати</span>
 				</a>
-				<a href="calendar.html" id="calendar_link" class="active">
+				<a href="calendar.html">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M13.8 21.025H10.2C6.8061 21.025 5.1087 21.025 4.0548 19.9702C3 18.9163 3 17.2189 3 13.825V12.025C3 8.63111 3 6.93371 4.0548 5.87981C5.1087 4.82501 6.8061 4.82501 10.2 4.82501H13.8C17.1939 4.82501 18.8913 4.82501 19.9452 5.87981C21 6.93371 21 8.63111 21 12.025V13.825C21 17.2189 21 18.9163 19.9452 19.9702C19.3575 20.5588 18.57 20.8189 17.4 20.9332M7.5 4.82501V3.47501M16.5 4.82501V3.47501M20.55 9.32501H10.875M3 9.32501H6.4875" stroke="#323232" stroke-width="1.2" stroke-linecap="round" />
 						<path d="M17.4 16.525C17.4 16.7637 17.3052 16.9926 17.1364 17.1614C16.9676 17.3302 16.7387 17.425 16.5 17.425C16.2613 17.425 16.0324 17.3302 15.8636 17.1614C15.6948 16.9926 15.6 16.7637 15.6 16.525C15.6 16.2863 15.6948 16.0574 15.8636 15.8886C16.0324 15.7198 16.2613 15.625 16.5 15.625C16.7387 15.625 16.9676 15.7198 17.1364 15.8886C17.3052 16.0574 17.4 16.2863 17.4 16.525ZM17.4 12.925C17.4 13.1637 17.3052 13.3926 17.1364 13.5614C16.9676 13.7302 16.7387 13.825 16.5 13.825C16.2613 13.825 16.0324 13.7302 15.8636 13.5614C15.6948 13.3926 15.6 13.1637 15.6 12.925C15.6 12.6863 15.6948 12.4574 15.8636 12.2886C16.0324 12.1198 16.2613 12.025 16.5 12.025C16.7387 12.025 16.9676 12.1198 17.1364 12.2886C17.3052 12.4574 17.4 12.6863 17.4 12.925ZM12.9 16.525C12.9 16.7637 12.8052 16.9926 12.6364 17.1614C12.4676 17.3302 12.2387 17.425 12 17.425C11.7613 17.425 11.5324 17.3302 11.3636 17.1614C11.1948 16.9926 11.1 16.7637 11.1 16.525C11.1 16.2863 11.1948 16.0574 11.3636 15.8886C11.5324 15.7198 11.7613 15.625 12 15.625C12.2387 15.625 12.4676 15.7198 12.6364 15.8886C12.8052 16.0574 12.9 16.2863 12.9 16.525ZM12.9 12.925C12.9 13.1637 12.8052 13.3926 12.6364 13.5614C12.4676 13.7302 12.2387 13.825 12 13.825C11.7613 13.825 11.5324 13.7302 11.3636 13.5614C11.1948 13.3926 11.1 13.1637 11.1 12.925C11.1 12.6863 11.1948 12.4574 11.3636 12.2886C11.5324 12.1198 11.7613 12.025 12 12.025C12.2387 12.025 12.4676 12.1198 12.6364 12.2886C12.8052 12.4574 12.9 12.6863 12.9 12.925ZM8.4 16.525C8.4 16.7637 8.30518 16.9926 8.13639 17.1614C7.96761 17.3302 7.73869 17.425 7.5 17.425C7.2613 17.425 7.03239 17.3302 6.8636 17.1614C6.69482 16.9926 6.6 16.7637 6.6 16.525C6.6 16.2863 6.69482 16.0574 6.8636 15.8886C7.03239 15.7198 7.2613 15.625 7.5 15.625C7.73869 15.625 7.96761 15.7198 8.13639 15.8886C8.30518 16.0574 8.4 16.2863 8.4 16.525ZM8.4 12.925C8.4 13.1637 8.30518 13.3926 8.13639 13.5614C7.96761 13.7302 7.73869 13.825 7.5 13.825C7.2613 13.825 7.03239 13.7302 6.8636 13.5614C6.69482 13.3926 6.6 13.1637 6.6 12.925C6.6 12.6863 6.69482 12.4574 6.8636 12.2886C7.03239 12.1198 7.2613 12.025 7.5 12.025C7.73869 12.025 7.96761 12.1198 8.13639 12.2886C8.30518 12.4574 8.4 12.6863 8.4 12.925Z" fill="#323232" />
 					</svg>
 					<span>Календар</span>
 				</a>
-				<a href="#">
+				<a href="account-menu.html">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4M12 20C13.1994 20.0011 14.3837 19.7319 15.4648 19.2126C16.546 18.6932 17.4962 17.937 18.245 17" stroke="#323232" stroke-width="1.2" stroke-linecap="round" />
 						<path d="M4 12H14M14 12L11 9M14 12L11 15" stroke="#323232" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
@@ -211,12 +90,7 @@
 		</footer>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240504140308" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js?_v=20240504140308"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js?_v=20240504140308"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js?_v=20240504140308" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20240504140308"></script>
 	<script src="js/min/main.min.js"></script>
-	<script src="js/min/calendar.min.js"></script>
 </body>
 
 </html>
