@@ -18,13 +18,15 @@
 
 <body>
 	<main class="wrapper">
-		<nav class="secondary-nav">
-			<a href="account-menu.html" class="goback">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#323232" />
-				</svg>
-			</a>
-			<div class="title-md">Особистий кабінет</div>
+		<nav class="behind-nav">
+			<div class="container">
+				<a href="profile.html" class="title-md">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#323232" />
+					</svg>
+					Особистий кабінет
+				</a>
+			</div>
 		</nav>
 		<div class="profile-edit">
 			<h1 class="head-sm">Особиисті дані</h1>
@@ -75,52 +77,54 @@
 			</div>
 
 			<div class="profile-edit-main">
-				<div class="input-row with-btn edit-field untouch">
-					<label for="name" class="body-sm">Ім’я</label>
-					<input type="text" name="name" id="name" class="body-lg" value="Журенко Тарас" disabled>
-					<div class="action">
-						<a href="#" class="btn-sm btn-edit-field">
-							<img src="img/edit-w.svg" alt="Edit field">
-						</a>
-					</div>
-				</div>
-				<div class="input-row with-btn edit-field untouch">
-					<label for="sex" class="body-sm">Стать</label>
-					<select name="sex" id="sex" disabled>
-						<option value="Чоловіча">Чоловіча</option>
-						<option value="Жіноча">Жіноча</option>
-					</select>
-					<div class="action">
-						<a href="#" class="btn-sm btn-edit-field">
-							<img src="img/edit-w.svg" alt="Edit field">
-						</a>
-					</div>
-				</div>
-				<div class="input-row with-btn edit-field untouch">
-					<label for="age" class="body-sm">Вік</label>
-					<input type="text" name="age" id="age" value="27" class="body-lg" disabled>
-					<div class="action">
-						<a href="#" class="btn-sm btn-edit-field">
-							<img src="img/edit-w.svg" alt="Edit field">
-						</a>
-					</div>
-				</div>
-				<div class="input-row with-btn edit-field untouch">
-					<label for="status_2" class="body-sm">Статус</label>
-					<input type="text" name="status_2" id="status_2" value="В поиске новых знакомств" class="body-lg" disabled>
-					<div class="action">
-						<a href="#" class="btn-sm btn-edit-field">
-							<img src="img/edit-w.svg" alt="Edit field">
-						</a>
-					</div>
-				</div>
-				<div class="input-row with-btn">
-					<label for="name" class="body-sm">Про мене</label>
-					<div class="textarea-wrapper" id="aboutme-content">
-						<div class="textarea-content">
-							<p>Людьми к тому времени будет править искусственный интеллект (ИИ), который без ошибок выполняет задачи и распознает человеческие эмоции.</p>
+				<div class="container">
+					<div class="input-row with-btn edit-field untouch">
+						<label for="name" class="body-sm">Ім’я</label>
+						<input type="text" name="name" id="name" class="body-lg" value="Журенко Тарас" disabled>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
 						</div>
-						<a href="#" class="btn-lg btn-edit-aboutme label-lg">Редагувати</a>
+					</div>
+					<div class="input-row with-btn edit-field untouch">
+						<label for="sex" class="body-sm">Стать</label>
+						<select name="sex" id="sex" disabled>
+							<option value="Чоловіча">Чоловіча</option>
+							<option value="Жіноча">Жіноча</option>
+						</select>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
+						</div>
+					</div>
+					<div class="input-row with-btn edit-field untouch">
+						<label for="age" class="body-sm">Вік</label>
+						<input type="text" name="age" id="age" value="27" class="body-lg" disabled>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
+						</div>
+					</div>
+					<div class="input-row with-btn edit-field untouch">
+						<label for="status_2" class="body-sm">Статус</label>
+						<input type="text" name="status_2" id="status_2" value="В поиске новых знакомств" class="body-lg" disabled>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
+						</div>
+					</div>
+					<div class="input-row with-btn">
+						<label for="name" class="body-sm">Про мене</label>
+						<div class="textarea-wrapper" id="aboutme-content">
+							<div class="textarea-content">
+								<p>Людьми к тому времени будет править искусственный интеллект (ИИ), который без ошибок выполняет задачи и распознает человеческие эмоции.</p>
+							</div>
+							<a href="#" class="btn-lg btn-edit-aboutme label-lg">Редагувати</a>
+						</div>
 					</div>
 				</div>
 			</div>
