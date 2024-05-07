@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<title>My events</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css?_v=20240507140842" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css?_v=20240507140842" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20240507140842" type="text/css">
+	<script src="https://cdn.tiny.cloud/1/a17z2bgcpod744ns111125en7o5b86j4rumnnafqgg4hmgdf/tinymce/7/tinymce.min.js?_v=20240507140842" referrerpolicy="origin"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20240507140842">
+</head>
+
+<body>
+	<main class="wrapper">
+		<nav class="secondary-nav">
+			<a href="account-menu.html" class="goback">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#323232" />
+				</svg>
+			</a>
+			<div class="title-md">Мої заходи</div>
+		</nav>
+		<div class="container">
+			<div class="my-events-search">
+				<div class="input-row">
+					<label for="search">Пошук</label>
+					<input type="text" id="search">
+					<a href="#" class="action remove static" style="display: none;">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M17 17.9C16.8 17.9 16.5 17.8 16.4 17.6L12 13.3L7.6 17.7C7.2 18.1 6.7 18.1 6.3 17.7C5.9 17.3 5.9 16.8 6.3 16.4L10.7 12L6.4 7.60001C6 7.30001 6 6.70001 6.4 6.40001C6.7 6.00001 7.3 6.00001 7.6 6.40001L12 10.8L16.4 6.40001C16.8 6.00001 17.3 6.00001 17.7 6.40001C18.1 6.80001 18.1 7.30001 17.7 7.70001L13.3 12L17.7 16.4C18.1 16.8 18.1 17.3 17.7 17.7C17.5 17.8 17.2 17.9 17 17.9Z" fill="#7948EC" />
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="my-events">
+				<div class="my-events-head">
+					<h1 class="head-sm">Мої заходи</h1>
+					<div class="my-events-count label-lg">2</div>
+				</div>
+				<div class="my-events-wrapper">
+					<a href="event-edit.html" class="my-events-item">
+						<img src="img/running-p.svg" alt="Running event">
+						<div class="my-events-item-content">
+							<div class="title-md">Велотур</div>
+							<div class="body-sm"><span class="event-status planed">Заплановано</span>01.01.2024&nbsp;<span class="event-time">11:00</span></div>
+						</div>
+						<div class="my-events-item-push"></div>
+					</a>
+					<a href="event-edit.html" class="my-events-item">
+						<img src="img/running-p.svg" alt="Running event">
+						<div class="my-events-item-content">
+							<div class="title-md">Велотур</div>
+							<div class="body-sm"><span class="event-status active">Активно</span>01.01.2024&nbsp;<span class="event-time">11:00</span></div>
+						</div>
+						<div class="my-events-item-push" style="display: none;"></div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="page-actions">
+			<a href="#" class="btn-sm my-events-filter-open">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M16 20.7001C15.4 20.7001 14.9 20.5001 14.4 20.2001C13.9 19.9001 13.6 19.4 13.4 18.9L13.3 18.7H4.00005C3.80005 18.7 3.60005 18.6 3.50005 18.5C3.40005 18.4 3.30005 18.2 3.30005 18C3.30005 17.8 3.40005 17.6 3.50005 17.5C3.60005 17.4 3.80005 17.3 4.00005 17.3H13.4L13.5 17.1C13.7 16.6 14 16.1 14.5 15.8C15 15.5 15.5 15.3 16.1 15.3C17.3 15.3 18.3 16 18.7 17.1L18.8 17.3H20C20.2 17.3 20.4 17.4 20.5 17.5C20.6 17.6 20.7001 17.8 20.7001 18C20.7001 18.2 20.6 18.4 20.5 18.5C20.4 18.6 20.2 18.7 20 18.7H18.6L18.5 18.9C18.3 19.4 18 19.9001 17.5 20.2001C17.1 20.5001 16.6 20.7001 16 20.7001ZM16 16.7C15.7 16.7 15.3 16.8 15.1 17.1C14.9 17.3 14.7 17.7 14.7 18C14.7 18.3 14.8 18.7 15.1 18.9C15.3 19.1 15.7 19.3 16 19.3C16.3 19.3 16.7 19.2 16.9 18.9C17.1 18.7 17.3 18.3 17.3 18C17.3 17.7 17.2 17.3 16.9 17.1C16.7 16.8 16.3 16.7 16 16.7ZM8.00005 14.7C7.50005 14.7 7.00005 14.6 6.50005 14.3C6.00005 14 5.70005 13.6 5.50005 13.1L5.40005 12.8H4.00005C3.80005 12.8 3.60005 12.7 3.50005 12.6C3.40005 12.5 3.30005 12.3 3.30005 12.1C3.30005 11.9 3.30005 11.7 3.50005 11.6C3.60005 11.5 3.80005 11.4 4.00005 11.3H4.10005H5.50005L5.60005 11.1C5.80005 10.6 6.10005 10.1 6.60005 9.80005C7.10005 9.50005 7.60005 9.30005 8.20005 9.30005C8.70005 9.30005 9.30005 9.50005 9.70005 9.80005C10.1 10.1 10.5 10.5 10.7 11L10.8 11.3H20C20.2 11.3 20.4 11.4 20.5 11.5C20.6 11.6 20.7001 11.8 20.7001 12C20.7001 12.2 20.7 12.4 20.5 12.5C20.4 12.6 20.2 12.7 20 12.8H19.9H10.5L10.4 13C10.2 13.5 9.90005 14 9.40005 14.3C9.20005 14.5 8.60005 14.7 8.00005 14.7ZM8.00005 10.7C7.70005 10.7 7.30005 10.8 7.10005 11.1C6.90005 11.3 6.70005 11.7 6.70005 12C6.70005 12.3 6.80005 12.7 7.10005 12.9C7.30005 13.1 7.70005 13.3 8.00005 13.3C8.30005 13.3 8.70005 13.2 8.90005 12.9C9.10005 12.7 9.30005 12.3 9.30005 12C9.30005 11.7 9.20005 11.3 8.90005 11.1C8.70005 10.8 8.30005 10.7 8.00005 10.7ZM16 8.70005C15.4 8.70005 14.9 8.50005 14.4 8.20005C13.9 7.90005 13.6 7.40005 13.4 6.90005L13.3 6.70005H4.00005C3.80005 6.70005 3.60005 6.60005 3.50005 6.50005C3.40005 6.40005 3.30005 6.20005 3.30005 6.00005C3.30005 5.80005 3.40005 5.60005 3.50005 5.50005C3.60005 5.40005 3.80005 5.30005 4.00005 5.30005H13.4L13.5 5.10005C13.7 4.60005 14 4.10005 14.5 3.80005C15 3.50005 15.5 3.30005 16.1 3.30005C17.2 3.30005 18.3 4.00005 18.7 5.10005L18.8 5.30005H20C20.2 5.30005 20.4 5.40005 20.5 5.50005C20.6 5.60005 20.7001 5.80005 20.7001 6.00005C20.7001 6.20005 20.6 6.40005 20.5 6.50005C20.4 6.60005 20.2 6.70005 20 6.70005H18.6L18.5 6.90005C18.3 7.40005 18 7.90005 17.5 8.20005C17.1 8.50005 16.6 8.70005 16 8.70005ZM16 4.70005C15.7 4.70005 15.3 4.80005 15.1 5.10005C14.9 5.30005 14.7 5.70005 14.7 6.00005C14.7 6.30005 14.8 6.70005 15.1 6.90005C15.3 7.10005 15.7 7.30005 16 7.30005C16.3 7.30005 16.7 7.20005 16.9 6.90005C17.1 6.70005 17.3 6.30005 17.3 6.00005C17.3 5.70005 17.2 5.30005 16.9 5.10005C16.7 4.80005 16.3 4.70005 16 4.70005Z" fill="white" />
+				</svg>
+			</a>
+		</div>
+		<div class="my-events-filter full-popup">
+			<div class="container">
+				<nav class="secondary-nav">
+					<a href="my-events.html" class="goback">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#323232" />
+						</svg>
+					</a>
+					<div class="title-md">Мої заходи</div>
+				</nav>
+				<div class="my-events-filter-head">
+					<div class="head-sm">Фільтр</div>
+					<a href="#" class="my-events-filter-clear">
+						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="16" cy="16" r="16" fill="#FFE6E6" />
+							<path d="M19.3406 19.4322L19.2828 19.3757L16.3495 16.5091L15.996 16.1636L15.6464 16.5131L12.7131 19.4464C12.6831 19.4764 12.6605 19.4897 12.6484 19.4952C12.6423 19.498 12.6383 19.4991 12.6364 19.4996C12.6345 19.5 12.6336 19.5 12.6333 19.5C12.6331 19.5 12.6322 19.5 12.6303 19.4996C12.6283 19.4991 12.6244 19.498 12.6183 19.4952C12.6062 19.4897 12.5835 19.4764 12.5536 19.4464C12.5236 19.4164 12.5103 19.3938 12.5047 19.3817C12.502 19.3756 12.5009 19.3717 12.5004 19.3697C12.5 19.3678 12.5 19.3669 12.5 19.3666C12.5 19.3664 12.5 19.3655 12.5004 19.3636C12.5009 19.3616 12.502 19.3577 12.5047 19.3516C12.5103 19.3395 12.5236 19.3169 12.5536 19.2869L15.4869 16.3535L15.8364 16.004L15.4909 15.6505L12.6243 12.7172L12.5974 12.6897L12.5667 12.6667L12.6238 12.6238L12.6667 12.5667L12.688 12.5951L12.7131 12.6202L15.6464 15.5535L16 15.9071L16.3536 15.5535L19.2869 12.6202C19.3169 12.5902 19.3395 12.5769 19.3516 12.5714C19.3577 12.5686 19.3617 12.5675 19.3636 12.5671C19.3655 12.5667 19.3664 12.5667 19.3667 12.5667C19.3669 12.5667 19.3678 12.5667 19.3697 12.5671C19.3717 12.5675 19.3756 12.5686 19.3817 12.5714C19.3938 12.5769 19.4165 12.5902 19.4464 12.6202C19.4764 12.6502 19.4897 12.6728 19.4953 12.6849C19.498 12.691 19.4991 12.695 19.4996 12.6969C19.5 12.6988 19.5 12.6997 19.5 12.7C19.5 12.7002 19.5 12.7011 19.4996 12.703C19.4991 12.705 19.498 12.709 19.4953 12.715C19.4898 12.7269 19.4769 12.749 19.4481 12.7781L16.5172 15.6424L16.1555 15.9959L16.5131 16.3535L19.4464 19.2869C19.4764 19.3169 19.4897 19.3395 19.4953 19.3516C19.498 19.3577 19.4991 19.3616 19.4996 19.3636C19.5 19.3655 19.5 19.3664 19.5 19.3666C19.5 19.3669 19.5 19.3678 19.4996 19.3697C19.4991 19.3717 19.498 19.3756 19.4953 19.3817C19.4942 19.3839 19.4929 19.3866 19.4913 19.3895C19.4693 19.3979 19.4462 19.4058 19.423 19.4127C19.3953 19.421 19.3716 19.4267 19.3532 19.4301C19.3481 19.4311 19.3439 19.4317 19.3406 19.4322Z" fill="#323232" stroke="#D34949" />
+						</svg>
+					</a>
+				</div>
+				<div class="input-row">
+					<label for="status">Статус</label>
+					<select name="status" id="status">
+						<option value="Всі">Всі</option>
+						<option value="Активно">Активно</option>
+						<option value="Заплановано">Заплановано</option>
+					</select>
+				</div>
+				<div class="input-row">
+					<label for="category">Категорія</label>
+					<select name="category" id="category">
+						<option value="Всі">Всі</option>
+						<option value="Велотур">Велотур</option>
+						<option value="Велотур">Велотур</option>
+					</select>
+				</div>
+				<div class="input-row">
+					<label for="date">Категорія</label>
+					<select name="date" id="date">
+						<option value="Всі">Всі</option>
+						<option value="Дата">Дата</option>
+						<option value="Дата">Дата</option>
+					</select>
+				</div>
+			</div>
+			<div class="page-actions">
+				<a href="#" class="btn-sm my-events-submit">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10 16.4L6 12.4L7.4 11L10 13.6L16.6 7L18 8.4L10 16.4Z" fill="white" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240507140842" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="js/min/main.min.js"></script>
+</body>
+
+</html>

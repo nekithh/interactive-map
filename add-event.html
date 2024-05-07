@@ -5,15 +5,19 @@
 	<title>Add event</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css?_v=20240504140308" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css?_v=20240504140308" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20240504140308" type="text/css">
-	<link rel="stylesheet" href="css/style.min.css?_v=20240504140308">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css?_v=20240507140842" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css?_v=20240507140842" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20240507140842" type="text/css">
+	<script src="https://cdn.tiny.cloud/1/a17z2bgcpod744ns111125en7o5b86j4rumnnafqgg4hmgdf/tinymce/7/tinymce.min.js?_v=20240507140842" referrerpolicy="origin"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20240507140842">
 </head>
 
 <body>
-	<div class="wrapper">
+	<main class="wrapper">
 		<nav class="secondary-nav">
 			<a href="calendar.html" class="goback">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,11 +43,11 @@
 				<label for="desc_event" class="body-sm">Опис</label>
 				<textarea name="desc_event" id="desc_event" rows="15"></textarea>
 			</div>
-			<div class="input-row">
+			<div class="input-row with-btn">
 				<label for="address" class="body-sm">Адреса заходу</label>
 				<div class="geocoder body-lg" id="geocoder"></div>
-				<div class="action btn">
-					<a href="#" class="btn-sm show-address-map">
+				<div class="action">
+					<a href="#" class="btn-sm show-address-map btn-edit-field">
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M20 7.54281C20 6.58191 20 6.101 19.7484 5.73893C19.4969 5.37686 19.0569 5.22485 18.1769 4.92083L17.1413 4.56337C15.9262 4.14326 15.3191 3.93321 14.7067 4.01889C14.0951 4.10364 13.5618 4.47124 12.496 5.20735L11.2676 6.05677C10.4356 6.63166 10.0196 6.9191 9.552 7.03334C9.38085 7.07569 9.20607 7.10038 9.03022 7.10704C8.55022 7.12363 8.07644 6.95964 7.128 6.63166C5.88533 6.20234 5.264 5.98768 4.79111 6.20602C4.62353 6.2833 4.47314 6.39558 4.34933 6.53584C4 6.93292 4 7.61099 4 8.96896V12.714M20 11.0787V15.031C20 16.389 20 17.068 19.6507 17.4632C19.527 17.6042 19.3766 17.7171 19.2089 17.7949C18.736 18.0123 18.1147 17.7977 16.872 17.3683C15.9236 17.0404 15.4498 16.8764 14.9698 16.8939C14.7937 16.8999 14.6186 16.924 14.4471 16.9657C13.9804 17.0809 13.5644 17.3683 12.7324 17.9423L11.504 18.7917C10.4373 19.5288 9.90489 19.8973 9.29333 19.9811C8.68178 20.0668 8.07378 19.8567 6.85867 19.4366L5.82311 19.0792C4.94311 18.7751 4.50311 18.6231 4.25156 18.2611C4.01333 17.9184 4.00089 17.4688 4 16.6064M14.6667 4.16906V7.39356M14.6667 16.6064V11.0787M9.33333 19.8309V16.6064M9.33333 7.39356V12.9213" stroke="white" stroke-width="1.5" stroke-linecap="round" />
 						</svg>
@@ -97,7 +101,7 @@
 				</label>
 			</div>
 
-			<a href="event.html" class="btn-lg label-lg">Створити</a>
+			<a href="#" class="btn-lg label-lg">Створити</a>
 		</div>
 
 		<div style="display:none;" id="my-template">
@@ -117,16 +121,16 @@
 		</div>
 
 		<div class="address-map" id="address-map"></div>
-
-	</div>
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240504140308" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js?_v=20240504140308"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js?_v=20240504140308"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js?_v=20240504140308" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20240504140308"></script>
-	<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js?_v=20240504140308"></script>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240507140842" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js?_v=20240507140842"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js?_v=20240507140842"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js?_v=20240507140842" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20240507140842"></script>
+	<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js?_v=20240507140842"></script>
 	<script src="js/min/main.min.js"></script>
 	<script src="js/min/new-event.min.js"></script>
+
 </body>
 
 </html>

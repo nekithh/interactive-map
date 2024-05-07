@@ -6,18 +6,18 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css?_v=20240504140308" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css?_v=20240504140308" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20240504140308" type="text/css">
-	<link rel="stylesheet" href="css/style.min.css?_v=20240504140308">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css?_v=20240507140842" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css?_v=20240507140842" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20240507140842" type="text/css">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240507140842">
 </head>
 
 <body>
 
-	<div class="wrapper">
+	<main class="wrapper">
 		<div class="container">
 			<h1 class="head-md calendar-title">Календар</h1>
 
@@ -64,13 +64,13 @@
 					<path d="M20 20L16.1396 16.1396M16.1396 16.1396C16.7999 15.4793 17.3237 14.6953 17.6811 13.8326C18.0385 12.9698 18.2224 12.0451 18.2224 11.1112C18.2224 10.1774 18.0385 9.25264 17.6811 8.38987C17.3237 7.5271 16.7999 6.74316 16.1396 6.08283C15.4793 5.42249 14.6953 4.89868 13.8326 4.54131C12.9698 4.18394 12.0451 4 11.1112 4C10.1774 4 9.25264 4.18394 8.38987 4.54131C7.5271 4.89868 6.74316 5.42249 6.08283 6.08283C4.74921 7.41644 4 9.2252 4 11.1112C4 12.9972 4.74921 14.806 6.08283 16.1396C7.41644 17.4732 9.2252 18.2224 11.1112 18.2224C12.9972 18.2224 14.806 17.4732 16.1396 16.1396Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			</a>
-			<a href="add-event.html" class="btn-sm c_add-btn">
+			<a href="add-event.html" class="btn-sm">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M12 5.25V18.75M18.75 12H5.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M12 5.25V18.75M18.75 12H5.25" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
 			</a>
 		</div>
-		<div class="calendar-search">
+		<div class="calendar-search full-popup">
 			<div class="container">
 				<nav class="secondary-nav">
 					<a href="calendar.html" class="goback">
@@ -93,7 +93,7 @@
 						<option value="Велотур">Велотур</option>
 					</select>
 				</div>
-				<div class="input-row">
+				<div class="input-row with-btn">
 					<label for="address" class="body-sm">Адреса заходу</label>
 					<div class="geocoder body-lg" id="geocoder"></div>
 					<div class="action btn">
@@ -105,7 +105,6 @@
 					</div>
 				</div>
 
-
 				<div class="input-row">
 					<label for="member" class="body-sm">Учасник</label>
 					<input type="text" placeholder="Людина, що долучилась" id="member" class="body-lg">
@@ -114,7 +113,8 @@
 				<a href="#" class="btn-lg c_search-submit label-lg">Знайти</a>
 			</div>
 		</div>
-		<div class="calendar-search-result">
+		<div class="address-map" id="address-map"></div>
+		<div class="calendar-search-result full-popup">
 			<div class="container">
 				<nav class="secondary-nav">
 					<a href="calendar.html" class="goback">
@@ -122,14 +122,9 @@
 							<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#323232" />
 						</svg>
 					</a>
-					<div class="title-md">Пошук заходу</div>
+					<div class="title-md">Заходи</div>
 				</nav>
 				<div class="calendar-events">
-					<style>
-						.calendar-events-item.d-i {
-							display: flex!important;
-						}
-					</style>
 					<!-- <p class="title-md">Не заплановано жодного заходу</p> -->
 					<div class="calendar-events-item d-i">
 						<img src="img/running-p.svg" alt="Art event">
@@ -177,7 +172,6 @@
 				</a>
 			</div>
 		</div>
-		<div class="address-map" id="address-map"></div>
 		<footer class="bottom-menu">
 			<div class="container">
 				<a href="index.html">
@@ -186,7 +180,7 @@
 					</svg>
 					<span>Заходи</span>
 				</a>
-				<a href="#">
+				<a href="chats.html">
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M3 10.7442C3 10.9107 3.06615 11.0704 3.18391 11.1882C3.30167 11.306 3.46138 11.3721 3.62791 11.3721C3.79444 11.3721 3.95415 11.306 4.07191 11.1882C4.18966 11.0704 4.25582 10.9107 4.25582 10.7442H3ZM4.52707 15.0357C4.46335 14.8819 4.3411 14.7596 4.18724 14.6959C4.03337 14.6321 3.86048 14.6321 3.70661 14.6958C3.55273 14.7596 3.43047 14.8818 3.36673 15.0357C3.30298 15.1895 3.30297 15.3624 3.3667 15.5163L4.52707 15.0357ZM13.4501 20.1796L13.9038 19.4127L12.8238 18.7731L12.3692 19.5399L13.4501 20.1796ZM10.0962 19.4127L10.55 20.1796L11.63 19.5399L11.177 18.7731L10.0962 19.4127ZM12.3692 19.5399C12.3301 19.6026 12.2757 19.6542 12.2111 19.69C12.1465 19.7258 12.0739 19.7446 12 19.7446C11.9262 19.7446 11.8535 19.7258 11.7889 19.69C11.7244 19.6542 11.6699 19.6026 11.6308 19.5399L10.55 20.1796C11.1971 21.2738 12.8021 21.2738 13.4501 20.1796L12.3701 19.5399H12.3692ZM10.7442 4.25582H13.2558V3H10.7442V4.25582ZM19.7442 10.7442V11.5814H21V10.7442H19.7442ZM8.48624 17.2259C7.43471 17.2075 6.88382 17.1405 6.45182 16.9613L5.9721 18.1217C6.64605 18.4013 7.41294 18.4641 8.46448 18.4825L8.48624 17.2259ZM3.3667 15.5163C3.60862 16.1004 3.96323 16.6311 4.41026 17.0781C4.8573 17.5252 5.38801 17.8798 5.9721 18.1217L6.45182 16.9613C5.58002 16.6002 4.8882 15.9076 4.52707 15.0357L3.3667 15.5163ZM19.7442 11.5814C19.7442 12.5651 19.7442 13.2717 19.7057 13.8293C19.668 14.381 19.596 14.741 19.4738 15.0357L20.6333 15.5163C20.8301 15.0424 20.9163 14.5301 20.959 13.9147C21.0009 13.3044 21 12.5484 21 11.5814H19.7442ZM15.5356 18.4809C16.5871 18.4633 17.354 18.4013 18.0279 18.1217L17.5474 16.9613C17.1162 17.1405 16.5653 17.2075 15.5146 17.2259L15.5356 18.4817V18.4809ZM19.4738 15.0357C19.1127 15.9076 18.42 16.6002 17.5482 16.9613L18.0279 18.1217C18.612 17.8798 19.1427 17.5252 19.5898 17.0781C20.0368 16.6311 20.3914 16.1004 20.6333 15.5163L19.4738 15.0357ZM13.2558 4.25582C14.6381 4.25582 15.631 4.25582 16.4054 4.33033C17.1706 4.40317 17.6571 4.54214 18.0455 4.77991L18.7011 3.70912C18.0824 3.3307 17.3808 3.16158 16.5243 3.07954C15.6771 2.99916 14.6138 3 13.2558 3V4.25582ZM21 10.7442C21 9.38625 21 8.32383 20.9197 7.47573C20.8385 6.61926 20.6693 5.91684 20.2909 5.29898L19.2193 5.95452C19.4579 6.34298 19.5969 6.8294 19.6697 7.59545C19.7434 8.36904 19.7442 9.36197 19.7442 10.7442H21ZM18.0447 4.77991C18.5237 5.07318 18.9265 5.4757 19.2201 5.95452L20.2909 5.29898C19.8939 4.65096 19.3491 4.10615 18.7011 3.70912L18.0455 4.78075L18.0447 4.77991ZM10.7442 3C9.38625 3 8.32383 3 7.47573 3.07954C6.61926 3.16158 5.91684 3.3307 5.29898 3.70912L5.95452 4.78075C6.34298 4.54214 6.8294 4.40317 7.59545 4.33033C8.36904 4.25665 9.36197 4.25582 10.7442 4.25582V3ZM4.25582 10.7442C4.25582 9.36197 4.25582 8.36904 4.33033 7.59462C4.40317 6.8294 4.54214 6.34298 4.77991 5.95452L3.70912 5.29982C3.3307 5.91768 3.16158 6.61926 3.07954 7.47573C3 8.32466 3 9.38625 3 10.7442H4.25582ZM5.29898 3.70912C4.65096 4.10615 4.10615 4.6518 3.70912 5.29982L4.78075 5.95452C5.07389 5.47589 5.4761 5.07339 5.95452 4.77991L5.29898 3.70912ZM11.1762 18.7731C11.0071 18.4859 10.8581 18.2322 10.7124 18.033C10.5626 17.8145 10.3679 17.6304 10.1414 17.493L9.51015 18.5788C9.5495 18.6023 9.60392 18.6441 9.69769 18.7731C9.79899 18.912 9.91369 19.1046 10.0962 19.4127L11.1762 18.7731ZM8.46448 18.4809C8.83285 18.4876 9.06476 18.4926 9.24225 18.5118C9.40801 18.5303 9.47248 18.5571 9.51015 18.5788L10.1414 17.493C9.907 17.3631 9.64752 17.2849 9.38039 17.2636C9.1309 17.2359 8.83118 17.2318 8.48624 17.2259L8.46448 18.4825V18.4809ZM13.9038 19.4127C14.0864 19.1054 14.201 18.912 14.3024 18.7731C14.3961 18.6441 14.4505 18.6023 14.4899 18.5788L13.8586 17.493C13.6158 17.6353 13.44 17.8237 13.2877 18.033C13.1428 18.2322 12.993 18.4851 12.823 18.7731L13.9038 19.4127ZM15.5146 17.2259C15.1697 17.2318 14.8691 17.2359 14.6197 17.2636C14.3593 17.2929 14.1039 17.3506 13.8586 17.493L14.4899 18.5788C14.5276 18.5571 14.592 18.5303 14.7578 18.5118C14.9353 18.4926 15.168 18.4867 15.5364 18.4809L15.5146 17.2251V17.2259Z" fill="#323232" />
 						<path d="M8.65115 11.1628H8.65869M11.9925 11.1628H12M15.3413 11.1628H15.3488" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -200,21 +194,17 @@
 					</svg>
 					<span>Календар</span>
 				</a>
-				<a href="#">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4M12 20C13.1994 20.0011 14.3837 19.7319 15.4648 19.2126C16.546 18.6932 17.4962 17.937 18.245 17" stroke="#323232" stroke-width="1.2" stroke-linecap="round" />
-						<path d="M4 12H14M14 12L11 9M14 12L11 15" stroke="#323232" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-					<span>Вхід</span>
+				<a href="account-menu.html">
+					<img src="img/my-acc.png" alt="My account">
 				</a>
 			</div>
 		</footer>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240504140308" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js?_v=20240504140308"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js?_v=20240504140308"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js?_v=20240504140308" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20240504140308"></script>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240507140842" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js?_v=20240507140842"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js?_v=20240507140842"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js?_v=20240507140842" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20240507140842"></script>
 	<script src="js/min/main.min.js"></script>
 	<script src="js/min/calendar.min.js"></script>
 </body>

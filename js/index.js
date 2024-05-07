@@ -37,28 +37,6 @@ $(document).ready(function() {
             }
         ]
     };
-    const calendar_input = new VanillaCalendar('#search_date', {
-        input: true,
-        actions: {
-            changeToInput(e, self) {
-                if (!self.HTMLInputElement) return;
-                if (self.selectedDates[0]) {
-                    self.HTMLInputElement.value = self.selectedDates[0];
-                    self.hide();
-                } else {
-                    self.HTMLInputElement.value = '';
-                }
-            },
-        },
-        settings: {
-            lang: 'uk',
-            visibility: {
-                positionToInput: 'center',
-            },
-        },
-    });
-
-    calendar_input.init();
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
@@ -81,7 +59,7 @@ $(document).ready(function() {
         .setPopup(
             new mapboxgl.Popup({ offset: 25 }) // add popups
             .setHTML(
-                '<div class="popup-headline"><div class="popup-date label-lg"><img src="img/calendar.svg" alt="">'+ feature.properties.date +'</div><div class="popup-time label-lg">'+ feature.properties.time +'</div></div><div class="popup-desc"><div class="popup-name label-lg"><img src="img/'+ feature.properties.type +'-p.svg" alt="">'+ feature.properties.title +'</div><p class="body-md">'+ feature.properties.description +'</p></div><div class="popup-place body-md"><img src="img/search.svg" alt="Search">'+ feature.properties.loc +'</div><div class="popup-members"><div class="members-images"><picture><source srcset="img/person.webp" type="image/webp"><picture><source srcset="img/person.webp" type="image/webp"><picture><source srcset="img/person.webp" type="image/webp"><picture><source srcset="img/person.webp" type="image/webp"><picture><source srcset="img/person.webp" type="image/webp"><img src="img/person.png" alt="Person"></picture></picture></picture></picture></picture><img src="img/person.png" alt="Person"><img src="img/person.png" alt="Person"><img src="img/person.png" alt="Person"><img src="img/person.png" alt="Person"></div><div class="members-count label-lg">+12</div></div><a href="'+ feature.properties.url +'" class="btn-lg label-lg popup-btn">Докладніше</a>'
+                '<div class="popup-headline"><div class="popup-date label-lg"><img src="img/calendar.svg" alt="">'+ feature.properties.date +'</div><div class="popup-time label-lg">'+ feature.properties.time +'</div></div><div class="popup-desc"><div class="popup-name label-lg"><img src="img/'+ feature.properties.type +'-p.svg" alt="">'+ feature.properties.title +'</div><p class="body-md">'+ feature.properties.description +'</p></div><div class="popup-place body-md"><img src="img/search.svg" alt="Search">'+ feature.properties.loc +'</div><div class="popup-members"><div class="members-images"><img src="img/person.png" alt="Person"><img src="img/person.png" alt="Person"><img src="img/person.png" alt="Person"><img src="img/person.png" alt="Person"><img src="img/person.png" alt="Person"></div><div class="members-count label-lg">+12</div></div><a href="'+ feature.properties.url +'" class="btn-lg label-lg popup-btn">Докладніше</a>'
             )
         )
         .addTo(map)
@@ -109,27 +87,17 @@ $(document).ready(function() {
             }
         }
     });
-    $('.clear-filter').click(function(event) {
-        event.preventDefault();
-        $('#date, #distance').val('');
-    })
-
-    $('.filter-cats a').click(function(event) {
-        event.preventDefault();
-        $(this).toggleClass('active');
-    })
-
     $('.search-btn').click(function(event) {
         event.preventDefault();
-        $('.map-search').fadeIn(300);
+        $('.map-search').show();
     });
     $('.settings-btn').click(function(event) {
         event.preventDefault();
-        $('.map-filter').fadeIn(300);
+        $('.map-filter').show();
     });
-
     $('#close-popups').click(function(event) {
         event.preventDefault();
         $('.map-search, .map-filter').fadeOut(300);
     });
-})
+    
+});

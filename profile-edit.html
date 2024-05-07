@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<title>Profile edit</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css?_v=20240507140842" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css?_v=20240507140842" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css?_v=20240507140842" type="text/css">
+	<script src="https://cdn.tiny.cloud/1/a17z2bgcpod744ns111125en7o5b86j4rumnnafqgg4hmgdf/tinymce/7/tinymce.min.js?_v=20240507140842" referrerpolicy="origin"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20240507140842">
+</head>
+
+<body>
+	<main class="wrapper">
+		<nav class="secondary-nav">
+			<a href="account-menu.html" class="goback">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="#323232" />
+				</svg>
+			</a>
+			<div class="title-md">Особистий кабінет</div>
+		</nav>
+		<div class="profile-edit">
+			<h1 class="head-sm">Особиисті дані</h1>
+
+			<div class="profile-edit-images">
+				<div class="container">
+					<form action="#" class="avatar-image">
+						<div class="dz-default dz-message btn-edit-wrap">
+							<button class="dz-button btn-edit label-lg" type="button">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.7059 6.87997L17.3529 9.47712M12.9412 19H20M5.88235 15.5371L5 19L8.52941 18.1343L18.7524 8.10409C19.0832 7.7794 19.269 7.33908 19.269 6.87997C19.269 6.42085 19.0832 5.98054 18.7524 5.65584L18.6006 5.50694C18.2697 5.18235 17.8209 5 17.3529 5C16.885 5 16.4362 5.18235 16.1053 5.50694L5.88235 15.5371Z" stroke="#7948EC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+						</div>
+						<div class="avatar-preview">
+							<div class="old-avatar dz-preview dz-image-preview">
+								<div class="dz-image">
+									<img data-dz-thumbnail src="img/avatar.png" alt="avatar" />
+								</div>
+								<div class="dz-progress">
+									<span class="dz-upload" data-dz-uploadprogress></span>
+								</div>
+							</div>
+						</div>
+						<div class="body-sm">Аватар</div>
+					</form>
+					<form action="#" class="background-image">
+						<div class="dz-default dz-message btn-edit-wrap">
+							<button class="dz-button btn-edit label-lg" type="button">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.7059 6.87997L17.3529 9.47712M12.9412 19H20M5.88235 15.5371L5 19L8.52941 18.1343L18.7524 8.10409C19.0832 7.7794 19.269 7.33908 19.269 6.87997C19.269 6.42085 19.0832 5.98054 18.7524 5.65584L18.6006 5.50694C18.2697 5.18235 17.8209 5 17.3529 5C16.885 5 16.4362 5.18235 16.1053 5.50694L5.88235 15.5371Z" stroke="#7948EC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+						</div>
+						<div class="background-preview">
+							<div class="old-background dz-preview dz-file-image">
+								<div class="dz-image">
+									<img data-dz-thumbnail src="img/prof-bg.png" alt="background" />
+								</div>
+								<div class="dz-progress">
+									<span class="dz-upload" data-dz-uploadprogress></span>
+								</div>
+							</div>
+						</div>
+						<div class="body-sm">Фото профілю</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="profile-edit-main">
+				<div class="input-row with-btn edit-field untouch">
+					<label for="name" class="body-sm">Ім’я</label>
+					<input type="text" name="name" id="name" class="body-lg" value="Журенко Тарас" disabled>
+					<div class="action">
+						<a href="#" class="btn-sm btn-edit-field">
+							<img src="img/edit-w.svg" alt="Edit field">
+						</a>
+					</div>
+				</div>
+				<div class="input-row with-btn edit-field untouch">
+					<label for="sex" class="body-sm">Стать</label>
+					<select name="sex" id="sex" disabled>
+						<option value="Чоловіча">Чоловіча</option>
+						<option value="Жіноча">Жіноча</option>
+					</select>
+					<div class="action">
+						<a href="#" class="btn-sm btn-edit-field">
+							<img src="img/edit-w.svg" alt="Edit field">
+						</a>
+					</div>
+				</div>
+				<div class="input-row with-btn edit-field untouch">
+					<label for="age" class="body-sm">Вік</label>
+					<input type="text" name="age" id="age" value="27" class="body-lg" disabled>
+					<div class="action">
+						<a href="#" class="btn-sm btn-edit-field">
+							<img src="img/edit-w.svg" alt="Edit field">
+						</a>
+					</div>
+				</div>
+				<div class="input-row with-btn edit-field untouch">
+					<label for="status_2" class="body-sm">Статус</label>
+					<input type="text" name="status_2" id="status_2" value="В поиске новых знакомств" class="body-lg" disabled>
+					<div class="action">
+						<a href="#" class="btn-sm btn-edit-field">
+							<img src="img/edit-w.svg" alt="Edit field">
+						</a>
+					</div>
+				</div>
+				<div class="input-row with-btn">
+					<label for="name" class="body-sm">Про мене</label>
+					<div class="textarea-wrapper" id="aboutme-content">
+						<div class="textarea-content">
+							<p>Людьми к тому времени будет править искусственный интеллект (ИИ), который без ошибок выполняет задачи и распознает человеческие эмоции.</p>
+						</div>
+						<a href="#" class="btn-lg btn-edit-aboutme label-lg">Редагувати</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="profile-edit-langs">
+				<div class="container">
+					<div class="head-sm">Мови спілкування</div>
+					<div class="langs-wrapper">
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="ukraine" id="ukraine">
+							<label for="ukraine">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/ukraine.svg" alt="Ukraine">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="uk" id="uk">
+							<label for="uk">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/uk.svg" alt="United Kingdom">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="monaco" id="monaco">
+							<label for="monaco">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/monaco.svg" alt="Monaco">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="south_korea" id="south_korea">
+							<label for="south_korea">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/south_korea.svg" alt="South Korea">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="japan" id="japan">
+							<label for="japan">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/japan.svg" alt="Japan">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="luxembourg" id="luxembourg">
+							<label for="luxembourg">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/luxembourg.svg" alt="Luxembourg">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="romania" id="romania">
+							<label for="romania">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/romania.svg" alt="Romania">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="india" id="india">
+							<label for="india">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/india.svg" alt="India">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="greece" id="greece">
+							<label for="greece">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/greece.svg" alt="Greece">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="germany" id="germany">
+							<label for="germany">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/germany.svg" alt="Germany">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="azerbaijan" id="azerbaijan">
+							<label for="azerbaijan">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/azerbaijan.svg" alt="Azerbaijan">
+						</div>
+						<div class="langs-item checkbox">
+							<input type="checkbox" name="armenia" id="armenia">
+							<label for="armenia">
+								<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="white" />
+								</svg>
+							</label>
+							<img src="img/armenia.svg" alt="Armenia">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="profile-edit-tags">
+				<div class="container">
+					<h2 class="head-sm">Інтереси</h2>
+					<div class="tags-wrapper">
+						<input type="checkbox" name="cats" id="cats_1" value="Спорт">
+						<label for="cats_1" class="label-lg">
+							Спорт
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8.33333 13.6667L5 10.3333L6.16667 9.16667L8.33333 11.3333L13.8333 5.83333L15 7L8.33333 13.6667Z" fill="white" />
+							</svg>
+						</label>
+						<input type="checkbox" name="cats" id="cats_2" value="Мистецтво">
+						<label for="cats_2" class="label-lg">
+							Мистецтво
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8.33333 13.6667L5 10.3333L6.16667 9.16667L8.33333 11.3333L13.8333 5.83333L15 7L8.33333 13.6667Z" fill="white" />
+							</svg>
+						</label>
+						<input type="checkbox" name="cats" id="cats_3" value="Наука">
+						<label for="cats_3" class="label-lg">
+							Наука
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8.33333 13.6667L5 10.3333L6.16667 9.16667L8.33333 11.3333L13.8333 5.83333L15 7L8.33333 13.6667Z" fill="white" />
+							</svg>
+						</label>
+						<input type="checkbox" name="cats" id="cats_4" value="Музика">
+						<label for="cats_4" class="label-lg">
+							Музика
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8.33333 13.6667L5 10.3333L6.16667 9.16667L8.33333 11.3333L13.8333 5.83333L15 7L8.33333 13.6667Z" fill="white" />
+							</svg>
+						</label>
+						<input type="checkbox" name="cats" id="cats_5" value="Зустріч">
+						<label for="cats_5" class="label-lg">
+							Зустріч
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8.33333 13.6667L5 10.3333L6.16667 9.16667L8.33333 11.3333L13.8333 5.83333L15 7L8.33333 13.6667Z" fill="white" />
+							</svg>
+						</label>
+						<input type="checkbox" name="cats" id="cats_6" value="Відпочинок">
+						<label for="cats_6" class="label-lg">
+							Відпочинок
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8.33333 13.6667L5 10.3333L6.16667 9.16667L8.33333 11.3333L13.8333 5.83333L15 7L8.33333 13.6667Z" fill="white" />
+							</svg>
+						</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="profile-edit-links">
+				<div class="container">
+					<div class="input-row with-btn edit-field untouch">
+						<label for="phone" class="body-sm">Номер телефону</label>
+						<input type="text" id="phone" value="+38 050 500 50 05" class="body-lg" disabled>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
+						</div>
+					</div>
+					<div class="input-row with-btn edit-field untouch">
+						<label for="facebook" class="body-sm">Facebook</label>
+						<input type="text" id="facebook" class="body-lg" disabled>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
+						</div>
+					</div>
+					<div class="input-row with-btn edit-field untouch">
+						<label for="instagram" class="body-sm">Instagram</label>
+						<input type="text" id="instagram" class="body-lg" disabled>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
+						</div>
+					</div>
+					<div class="input-row with-btn edit-field untouch">
+						<label for="youtube" class="body-sm">YouTube</label>
+						<input type="text" id="youtube" class="body-lg" disabled>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
+						</div>
+					</div>
+					<div class="input-row with-btn edit-field untouch">
+						<label for="website" class="body-sm">Особистий сайт</label>
+						<input type="text" id="website" class="body-lg" disabled>
+						<div class="action">
+							<a href="#" class="btn-sm btn-edit-field">
+								<img src="img/edit-w.svg" alt="Edit field">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="aboutme-edit wysiwig-editor">
+			<div class="container">
+				<textarea name="about" id="aboutme"></textarea>
+				<a href="#" class="btn-lg edit-save label-lg">Зберегти</a>
+			</div>
+		</div>
+		<div style="display:none;" id="my-template">
+			<div class="dz-preview dz-file-preview">
+				<div class="dz-image">
+					<img data-dz-thumbnail />
+				</div>
+				<div class="dz-progress">
+					<span class="dz-upload" data-dz-uploadprogress></span>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js?_v=20240507140842" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js?_v=20240507140842"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js?_v=20240507140842"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js?_v=20240507140842" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js?_v=20240507140842"></script>
+	<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js?_v=20240507140842"></script>
+	<script src="js/min/main.min.js"></script>
+	<script src="js/min/profile-edit.min.js"></script>
+</body>	
+
+</html>

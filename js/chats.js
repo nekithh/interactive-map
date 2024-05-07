@@ -6,7 +6,7 @@ $(document).ready(function() {
         $('.chats-tab').hide();
         $('.chats-tab_' + id).show();
     });
-    
+
     $(document).click(function(e, target) {
         const popover = $('.popover');
         const popup = $('.invite-popup');
@@ -20,7 +20,7 @@ $(document).ready(function() {
             $('.wrapper').removeClass('full-hide')
         }
     });
-    
+
     $('.ch_popover').click(function(event) {
         event.preventDefault();
         var $this = $(this);
@@ -35,7 +35,7 @@ $(document).ready(function() {
             $this.addClass('active');
         }, 0);
     });
-    
+
     $('.invite-btn').click(function(event) {
         event.preventDefault();
         setTimeout(function() {
@@ -43,4 +43,4 @@ $(document).ready(function() {
             $('.wrapper').addClass('full-hide');
         }, 0);
     });
-})
+});
