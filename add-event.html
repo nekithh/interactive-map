@@ -41,8 +41,13 @@
 				<input type="text" name="event_name">
 			</div>
 			<div class="input-row">
-				<label for="desc_event" class="body-sm">Опис</label>
-				<textarea name="desc_event" id="desc_event" rows="15"></textarea>
+				<label for="name" class="body-sm">Опис</label>
+				<div class="textarea-wrapper" id="evdesc-content">
+					<div class="textarea-content">
+						<p>Велотур дивовижною Західною Київщиною, яку можна сміливо вважати раєм для усіх велосипедистів дово поєднується розвинена велосипедна інфраструктура (велодоріжки, велосвітлофори тощо) та багата культурна спадщина попередніх століть. Мальовничі водні палаци і маєтки, потопаючі в квітах парки і затишні кафе, готичні церкви і водні канали, що йдуть в далечінь, - це далеко не повний перелік пам'яток, які вам належить побачити в цьому велотурі.</p>
+					</div>
+					<a href="#" class="btn-lg btn-edit-evdesc label-lg">Редагувати</a>
+				</div>
 			</div>
 			<div class="input-row with-btn">
 				<label for="address" class="body-sm">Адреса заходу</label>
@@ -104,7 +109,12 @@
 
 			<a href="#" class="btn-lg label-lg">Створити</a>
 		</div>
-
+		<div class="evdesc-edit wysiwig-editor">
+			<div class="container">
+				<textarea name="evdesc" id="evdesc"></textarea>
+				<a href="#" class="btn-lg evdesc-save label-lg">Зберегти</a>
+			</div>
+		</div>
 		<div style="display:none;" id="my-template">
 			<div class="dz-preview dz-file-preview">
 				<div class="dz-image">
